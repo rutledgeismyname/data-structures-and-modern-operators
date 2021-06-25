@@ -23,7 +23,52 @@ const restaurant = {
       `Order received! Your ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to address: ${address} at ${time}. Thank you for your purchase at ${this.name}! Final bill is ${bill}. Suggested tip is ${tip}.`
     );
   },
+  orderPasta: function(ing1, ing2, ing3){
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  }
+
 };
+
+// Spread operator array
+const arr = [7,8,9];
+
+// Bad Way to use a Spread operator 
+const badNewArr = [1,2, arr[0], arr[1],arr[2]];
+console.log(badNewArr);
+
+// Good Way to use a Spread operator
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+// Writing new array to add element option to Main Menu
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Joing 2 Arrays 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+//Iterables: arrays, strings, maps, sets. NOT Objects
+
+const str = 'Chris';
+const letters = [...str, '', 'S.'];
+console.log(letters);
+console.log(...str);
+
+const ingredients = [
+  prompt(`Let's make pasta! Ingredient 1?`), 
+  prompt(`Let's make pasta! Ingredient 2?`), 
+  prompt(`Let's make pasta! Ingredient 3?`)
+];
+console.log(ingredients);
+
+restaurant.orderPasta(...ingredients);
+/*
 restaurant.orderDelivery({
   time: '12:32PM',
   address: '8201 Henry Ave',
@@ -32,8 +77,9 @@ restaurant.orderDelivery({
   mainIndex: 3,
   starterIndex: 2,
 });
-
+*/
 /* /////////// Destructuring Objects //////////*/
+/*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
