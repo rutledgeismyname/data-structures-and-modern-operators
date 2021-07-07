@@ -32,6 +32,14 @@ const restaurant = {
 console.log(0 || 'Chris');
 console.log(0 && 'Chris');
 
+// The Nullish Coalescing Operator 
+restaurant,numbGuests = 0;
+const guests = restaurant.numbGuests || 10;
+console.log(guests);
+
+// Nullish values instead of false values. So it workes with null and underfined values. 
+const guestsCorrect = restaurant.numbGuests ?? 10;
+console.log(guestsCorrect);
 
 // Spread operator array
 const arr = [7,8,9];
