@@ -28,6 +28,10 @@ const restaurant = {
   }
 
 };
+//Short Circuiting (&& and ||)
+console.log(0 || 'Chris');
+console.log(0 && 'Chris');
+
 
 // Spread operator array
 const arr = [7,8,9];
